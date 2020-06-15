@@ -17,21 +17,25 @@ class _CalcFreteState extends State<CalcFrete> {
     number: true,
   );
 
-  String valor = '';
+  String valor = 'R\$0.00';
   String tipo = "Carga Geral";
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: <Widget>[
             Column(
               children: <Widget>[
-                Text(
-                  'Calcule o frete mínimo de sua carga',
-                  style: kBodyStyle,
+                Text("""Nós do Siga Bem nos preocupamos com seu bem estar físico e mental, assim como o bem estar do seu dinheiro.
+
+Nessa aba, você pode acessar ferramentas para calcular o frete e ver o valor do seu trabalho e conferir dicas especiais sobre como administrar melhor o seu dinheiro, dessa forma você garante que seu esforço não seja em vão, não é mesmo? E terá o sono tranquilo.""",style: kBodyStyle,),
+                SizedBox(height: 25,),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Text('CALCULADORA DE FRETE', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
                 ),
                 Container(
                   margin: EdgeInsets.all(10.0),
@@ -88,24 +92,21 @@ class _CalcFreteState extends State<CalcFrete> {
                 SizedBox(
                   height: 40,
                 ),
-                Visibility(
-                  visible: (valor != ''),
-                  child: Column(
-                    children: <Widget>[
-                      Text(
-                        'O valor mínimo a cobrar é',
-                        style: kBodyStyle,
-                        textAlign: TextAlign.center,
+                Column(
+                  children: <Widget>[
+                    Text(
+                      'O valor mínimo a cobrar é',
+                      style: kBodyStyle,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      valor,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 27,
                       ),
-                      Text(
-                        valor,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 27,
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 )
               ],
             ),

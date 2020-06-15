@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hackathonccr/constants.dart';
 import 'package:hackathonccr/utils/utils.dart';
 
 class SaudeCarousel extends StatelessWidget {
@@ -96,12 +97,20 @@ class SaudeCarousel extends StatelessWidget {
         .toList();
 
     return SafeArea(
-      child: CarouselSlider(
-        items: imageSliders,
-        options: CarouselOptions(
-            viewportFraction: 0.85,
-            enlargeCenterPage: true,
-            height: MediaQuery.of(context).size.width),
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('Nós nos preocupamos com a sua saúde. Por isso, separamos algumas dicas valiosas para você. Caso queira saber mais, clique nas imagens abaixo.',style: kBodyStyle,),
+          ),
+          CarouselSlider(
+            items: imageSliders,
+            options: CarouselOptions(
+                viewportFraction: 0.85,
+                enlargeCenterPage: true,
+                height: MediaQuery.of(context).size.width),
+          ),
+        ],
       ),
     );
   }

@@ -53,6 +53,7 @@ class _HomeTabsState extends State<HomeTabs> {
         length: 5,
         child: Scaffold(
             floatingActionButton: FloatingActionButton(
+              onPressed: () {},
               child: GestureDetector(
                 onLongPress: () {
                   showDialog(
